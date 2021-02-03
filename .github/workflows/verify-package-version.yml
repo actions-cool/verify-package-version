@@ -1,0 +1,13 @@
+name: Verify Package Version
+
+on:
+  pull_request:
+    types: [opened, edited, reopened, synchronize, ready_for_review]
+
+jobs:
+  verify-package:
+    runs-on: ubuntu-latest
+    steps:
+      - name: verify-version
+        uses: actions-cool/verify-package-version@main
+        with:
