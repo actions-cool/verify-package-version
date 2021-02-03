@@ -87,13 +87,14 @@ async function run() {
       }
 
       if (result) {
-        core.info("Verify package version passed!");
+        core.info(`Verify package version passed!`);
       } else {
         core.setFailed(`Verify package version failed!`);
       }
-
     } else {
-      core.info("This is now support 'pull_request'. I haven't thought about other trigger verification conditions for the time being, you can propose them!");
+      core.info(
+        "This is now support 'pull_request'. I haven't thought about other trigger verification conditions for the time being, you can propose them!",
+      );
     }
   } catch (error) {
     core.setFailed(error.message);
