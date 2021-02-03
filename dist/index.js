@@ -9683,8 +9683,8 @@ async function run() {
         result = false;
       }
 
+      let packageVersion = '';
       if (result && includeVersion && includeVersion == 'true') {
-        let packageVersion = '';
         if (owner === labels[0]) {
           const package = JSON.parse(readFileSync('./package.json'));
           packageVersion = package.version;
@@ -9721,11 +9721,22 @@ async function run() {
           }
         }
 
+        const titleVersion = title.split(" ").filter(item => !!item.match(/\d/g))[0];
+
+        const versionMess = `| PR package version | PR title version |
+| -- | -- |
+| ${packageVersion} | ${titleVersion} |
+`;
+
         let mess = '';
         if (result) {
           mess = `🎉 Verify package version passed!\n\n${FIXED}`;
         } else {
           mess = `🚨 Verify package version failed!\n\n${errorMess}\n\n${FIXED}`;
+        }
+
+        if (includeVersion == 'true') {
+          mess += `\n\n${versionMess}`;
         }
 
         if (ifHasComment) {
