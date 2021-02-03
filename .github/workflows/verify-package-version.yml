@@ -10,3 +10,7 @@ jobs:
     steps:
       - name: verify-version
         uses: actions-cool/verify-package-version@main
+        with:
+          title-include-content: 'changelog'
+          title-include-version: true
+          open-comment: true
