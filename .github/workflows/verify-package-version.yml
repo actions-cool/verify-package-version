@@ -9,6 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     if: contains(github.event.pull_request.title, 'changelog')
     steps:
+      - uses: actions/checkout@v2
       - name: verify-version
         uses: actions-cool/verify-package-version@main
         with:
