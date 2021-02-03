@@ -91,7 +91,7 @@ async function run() {
       if (result) {
         core.info(`Verify package version passed!`);
       } else {
-        core.setFailed(`Verify package version failed!`);
+        core.setFailed(`Verify package version failed! ${errorMess}`);
       }
     } else {
       core.info(

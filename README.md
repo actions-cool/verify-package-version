@@ -17,7 +17,7 @@ jobs:
   verify:
     runs-on: ubuntu-latest
     # Add conditions to trigger more effectively
-    if: contains(github.event.pull_request.body, 'changelog')
+    if: contains(github.event.pull_request.title, 'changelog')
     steps:
       - name: verify-version
         uses: actions-cool/verify-package-version@v1.0.0
