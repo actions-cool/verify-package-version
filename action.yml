@@ -14,10 +14,12 @@ inputs:
     description: Secret GitHub API token to use for making API requests.
     default: ${{ github.token }}
     required: true
-
-#outputs:
-#  result:
-#    description: action result
+  title-include-content:
+    description: Verify that the title contains content
+  title-include-version:
+    description: Verify that the title whether contains version
+  open-comment:
+    description: Whether to open comments
 
 runs:
   using: 'node12'
