@@ -19,8 +19,9 @@ jobs:
     # Add conditions to trigger more effectively
     if: contains(github.event.pull_request.title, 'changelog')
     steps:
+      - uses: actions/checkout@v2
       - name: verify-version
-        uses: actions-cool/verify-package-version@v1.0.0
+        uses: actions-cool/verify-package-version@v1.1.0
         with:
           title-include-content: 'docs'
           title-include-version: true
@@ -29,7 +30,12 @@ jobs:
 
 - `title-include-content`: Verify that the title contains content
 - `title-include-version`: Verify that the title whether contains version, default `true`
-- `open-comment`：Whether to open comments, default `false`. **Note** when open, the ref of PR must be in the current repositorie.
+- `open-comment`：Whether to open comments, default `false`
+
+## Note
+
+- When set `open-comment`, the ref of PR must be in the current repositorie
+- When use `1.1.0+` and PR ref is base branch, it will use `fs.readFileSync`. This requires you add `- uses: actions/checkout@v2`
 
 ## Changelog
 
