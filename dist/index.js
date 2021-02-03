@@ -9721,7 +9721,7 @@ async function run() {
           }
         }
 
-        const titleVersion = title.split(" ").filter(item => !!item.match(/\d/g))[0];
+        const titleVersion = title.split(" ").filter(item => !!item.match(/\d/g))[0] || '-';
 
         const versionMess = `| PR package version | PR title version |
 | -- | -- |
@@ -9735,7 +9735,7 @@ async function run() {
           mess = `🚨 Verify package version failed!\n\n${errorMess}\n\n${FIXED}`;
         }
 
-        if (includeVersion == 'true') {
+        if (packageVersion && includeVersion == 'true') {
           mess += `\n\n${versionMess}`;
         }
 
