@@ -14,7 +14,7 @@ on:
     types: [opened, edited, reopened, synchronize, ready_for_review, review_requested]
 
 jobs:
-  check:
+  verify:
     runs-on: ubuntu-latest
     # Add conditions to trigger more effectively
     if: contains(github.event.pull_request.body, 'changelog')
