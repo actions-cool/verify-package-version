@@ -10,4 +10,3 @@ jobs:
     steps:
       - name: verify-version
         uses: actions-cool/verify-package-version@main
-        with:
