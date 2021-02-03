@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.1.1
+
+`2021.02.03`
+
+- Optimize comment message. Add table show.
+
 ## 1.1.0
 
 `2021.02.03`

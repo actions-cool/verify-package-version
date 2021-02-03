@@ -71,7 +71,7 @@ async function run() {
           }
         }
 
-        const titleVersion = title.split(" ").filter(item => !!item.match(/\d/g))[0] || '-';
+        const titleVersion = title.split(' ').filter(item => !!item.match(/\d/g))[0] || '-';
 
         const versionMess = `| PR package version | PR title version |
 | -- | -- |

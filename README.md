@@ -4,6 +4,10 @@
 
 Currently only PR triggering is supported, and more scenario requirements can be raised through [issue](https://github.com/actions-cool/verify-package-version/issues).
 
+## Preview
+
+- [#6](https://github.com/actions-cool/verify-package-version/pull/6)
+
 ## How to use ?
 
 ```yml
