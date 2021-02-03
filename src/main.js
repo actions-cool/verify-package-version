@@ -2,6 +2,7 @@ const axios = require('axios');
 const core = require('@actions/core');
 const { Octokit } = require('@octokit/rest');
 const github = require('@actions/github');
+const { readFileSync } = require('fs');
 
 // **********************************************************
 const token = core.getInput('token');
@@ -33,9 +34,17 @@ async function run() {
       }
 
       if (result && includeVersion && includeVersion == 'true') {
-        const URL = `https://raw.githubusercontent.com/${labels[0]}/${repo}/${labels[1]}/package.json`;
-        const res = await axios.get(URL);
-        const packageVersion = res.data.version;
+        let packageVersion = '';
+        if (owner === labels[0]) {
+          const package = JSON.parse(readFileSync('./package.json'));
+          packageVersion = package.version;
+          core.info(`Query base repo version is ${packageVersion}`);
+        } else {
+          const URL = `https://raw.githubusercontent.com/${labels[0]}/${repo}/${labels[1]}/package.json`;
+          const res = await axios.get(URL);
+          packageVersion = res.data.version;
+          core.info(`Query fork repo version is ${packageVersion}`);
+        }
         if (!title.includes(packageVersion)) {
           errorMess = `The version of the PR title is not same with the package. Please check!`;
           result = false;
@@ -43,7 +52,7 @@ async function run() {
       }
 
       if (openComment == 'true' && owner !== labels[0]) {
-        core.info(`Comment only support base repositorie !`);
+        core.info(`Comment only support base repositorie!`);
       } else if (openComment == 'true') {
         let ifHasComment = false;
         let commentId;
