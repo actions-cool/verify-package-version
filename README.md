@@ -1,6 +1,6 @@
-# Verify Package Version
+# 🙏 Verify Package Version
 
-🙏 Verify your package version whether meets some conditions.
+Verify your package version whether meets some conditions.
 
 Currently only PR triggering is supported, and more scenario requirements can be raised through [issue](https://github.com/actions-cool/verify-package-version/issues).
 
