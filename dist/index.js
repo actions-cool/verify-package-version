@@ -9730,9 +9730,9 @@ async function run() {
 
         let mess = '';
         if (result) {
-          mess = `🎉 Verify package version passed!\n\n${FIXED}`;
+          mess = `### 🎉 Verify package version passed!\n\n${FIXED}`;
         } else {
-          mess = `🚨 Verify package version failed!\n\n${errorMess}\n\n${FIXED}`;
+          mess = `### 🚨 Verify package version failed!\n\n${errorMess}\n\n${FIXED}`;
         }
 
         if (packageVersion && includeVersion == 'true') {
