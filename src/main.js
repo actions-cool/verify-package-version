@@ -28,7 +28,7 @@ async function run() {
       let errorMess = '';
 
       if (includeContent && !title.includes(includeContent)) {
-        errorMess = `The PR title should include ${includeContent}`;
+        errorMess = `The PR title should include ${includeContent}!`;
         result = false;
       }
 
@@ -42,7 +42,9 @@ async function run() {
         }
       }
 
-      if (openComment == 'true') {
+      if (openComment == 'true' && owner !== labels[0]) {
+        core.info(`Comment only support base repositorie !`);
+      } else if (openComment == 'true') {
         let ifHasComment = false;
         let commentId;
 
@@ -64,7 +66,7 @@ async function run() {
         if (result) {
           mess = `🎉 Verify package version passed!\n\n${FIXED}`;
         } else {
-          mess = `🚨 Verify package version failed!\n${errorMess}\n${FIXED}`;
+          mess = `🚨 Verify package version failed!\n\n${errorMess}\n\n${FIXED}`;
         }
 
         if (ifHasComment) {

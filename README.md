@@ -1,40 +1,36 @@
-<p align="center">
-  <a href="">
-    <img width="140" src="https://avatars.githubusercontent.com/u/73879334?s=200&v=4" />
-  </a>
-</p>
+# Verify Package Version
 
-<h1 align="center">Action JavaScript Template</h1>
-<div align="center">
-A simple javascript template for rapid development of GitHub actions.
-</div>
+🙏 Verify your package version whether meets some conditions.
 
-![CI](https://github.com/actions-cool/action-js-template/workflows/CI/badge.svg)
+Currently only PR triggering is supported, and more scenario requirements can be raised through [issue](https://github.com/actions-cool/verify-package-version/issues).
 
-## 🚀 How to use?
+## How to use ?
 
-![](https://github.com/actions-cool/resources/blob/main/image/template-js.png?raw=true)
+```yml
+name: Verify Package Version
 
-## 📒 Catalog Introduction
+on:
+  pull_request:
+    types: [opened, edited, reopened, synchronize, ready_for_review, review_requested]
 
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    # Add conditions to trigger more effectively
+    if: contains(github.event.pull_request.body, 'changelog')
+    steps:
+      - name: verify-version
+        uses: actions-cool/verify-package-version@v1.0.0
+        with:
+          title-include-content: 'docs'
+          title-include-version: true
+          open-comment: true
 ```
-├── .github/workflows/     The CI for make sure it is packaged correctly
-├── dist                   Package the generated Aciton execution code
-├── src                    Component home directory
-│   └── main.js            Your code
-└── action.yml             Action config
-```
 
-The rest of the documents can be consulted by yourself.
-
-## 🤖 Command introduction
-
-| Name | Desc |
-| -- | -- |
-| package | action build for release |
-| format | prettier write |
-| format-check | prettier check |
+- `title-include-content`: Verify that the title contains content
+- `title-include-version`: Verify that the title whether contains version, default `true`
+- `open-comment`：Whether to open comments, default `false`. **Note** when open, the ref of PR must be in the current repositorie.
 
 ## LICENSE
 
-[MIT](https://github.com/actions-cool/action-js-template/blob/main/LICENSE)
+[MIT](https://github.com/actions-cool/verify-package-version/blob/main/LICENSE)
