@@ -1,5 +1,5 @@
 {
-  "name": "action-js-template",
+  "name": "verify-package-version",
   "version": "0.0.1",
   "private": true,
   "description": "A javascript template for rapid development of GitHub actions.",
