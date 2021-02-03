@@ -13,8 +13,7 @@ A simple javascript template for rapid development of GitHub actions.
 
 ## 🚀 How to use?
 
-![](https://github.com/actions-cool/resources/blob/main/image/template-js.png?raw=true)
-
+![](https://github.com/a
 ## 📒 Catalog Introduction
 
 ```
