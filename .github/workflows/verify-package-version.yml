@@ -13,4 +13,3 @@ jobs:
         with:
           title-include-content: 'changelog'
           title-include-version: true
-          open-comment: true
