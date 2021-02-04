@@ -39,7 +39,7 @@ jobs:
 ## Note
 
 - When set `open-comment`, the ref of PR must be in the current repositorie
-- When use `1.1.0+` and PR ref is base branch, it will use `fs.readFileSync`. This requires you add `- uses: actions/checkout@v2`
+- When use `1.1.0+` and PR ref is 2base branch, it will use `fs.readFileSync`. This requires you add `- uses: actions/checkout@v2`
 
 ## Changelog
 
