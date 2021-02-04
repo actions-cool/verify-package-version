@@ -19,7 +19,7 @@ name: Verify Package Version
 
 on:
   pull_request:
-    types: [opened, edited, reopened, synchronize, ready_for_review, review_requested]
+    types: [opened, edited, reopened, synchronize, ready_for_review]
 
 jobs:
   verify:
