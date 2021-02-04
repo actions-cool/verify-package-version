@@ -29,7 +29,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: verify-version
-        uses: actions-cool/verify-package-version@v1.1.0
+        uses: actions-cool/verify-package-version@v1.1.1
         with:
           title-include-content: 'docs'
           title-include-version: true
