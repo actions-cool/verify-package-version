@@ -49,20 +49,6 @@ jobs:
 
 [CHANGELOG](./CHANGELOG.md)
 
-## 💖 Who is using?
-
-<table>
-  <tr>
-    <td align="center" width="180">
-      <a href="https://github.com/ant-design/ant-design">
-        <img src="https://avatars1.githubusercontent.com/u/12101536?s=200&v=4" width="48" />
-        <div>ant-design</div>
-      </a>
-    </td>
-  </tr>
-</table>
-
-
 ## LICENSE
 
 [MIT](https://github.com/actions-cool/verify-package-version/blob/main/LICENSE)
