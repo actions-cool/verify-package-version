@@ -9,7 +9,7 @@ Currently only PR triggering is supported, and more scenario requirements can be
 - [#6](https://github.com/actions-cool/verify-package-version/pull/6)
 
 ![](./public/2.png)
-
+222
 ![](./public/1.png)
 
 ## How to use ?
