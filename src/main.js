@@ -68,6 +68,7 @@ async function run() {
           if (commentsArr[i].body.includes(FIXED)) {
             ifHasComment = true;
             commentId = commentsArr[i].id;
+            break;
           }
         }
 

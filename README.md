@@ -1,5 +1,9 @@
 # 🙏 Verify Package Version
 
+![](https://img.shields.io/github/workflow/status/actions-cool/verify-package-version/CI?style=flat-square)
+[![](https://img.shields.io/badge/marketplace-verify--package--version-blueviolet?style=flat-square)](https://github.com/marketplace/actions/verify-package-version)
+[![](https://img.shields.io/github/v/release/actions-cool/verify-package-version?style=flat-square&color=orange)](https://github.com/actions-cool/verify-package-version/releases)
+
 Verify your package version whether meets some conditions.
 
 Currently only PR triggering is supported, and more scenario requirements can be raised through [issue](https://github.com/actions-cool/verify-package-version/issues).
